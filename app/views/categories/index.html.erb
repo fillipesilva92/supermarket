@@ -1,0 +1,9 @@
+<h1>Categories</h1>
+
+<% @categories.each do |category| %>
+  <a href="/categories/<%= category.id %>"><%= category.name %></a>
+  <a href="/categories/<%= category.id %>/edit">Edit</a>
+  <a href="/categories/<%= category.id %>" data-confirm="Are you sure?" rel="nofollow" data-method="delete">Destroy</a>
+<% end %>
+
+<h4><a href='categories/new'>Add new category</a></h4>
