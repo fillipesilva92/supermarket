@@ -1,13 +1,12 @@
 <%= form_with(model: @category, local: true) do |form| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
-    <h2><%= pluralize(@category.errors.count, "error") %> prohibited this post from being saved:</h1>
-
-    <ul>
-      <% @category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this post from being saved:</h1>
+      <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 
