@@ -20,8 +20,6 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.find_by_id(params[:id])
-
     if @category.update(category_params)
       redirect_to '/categories', notice: 'Category has been successfully updated'
     else
@@ -30,16 +28,12 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find_by_id(params[:id])
   end
 
   def show
-    @category = Category.find_by_id(params[:id])
   end
 
   def destroy
-    @category = Category.find_by_id(params[:id])
-
     if @category.destroy
       redirect_to '/categories', notice: 'Category has been successfully deleted'
     else
