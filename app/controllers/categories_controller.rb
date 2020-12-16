@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[edit update destroy]
+  before_action :set_category, only: %i[edit update show destroy]
 
   def index
     @categories = Category.all
@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to '/', notice: 'Category was created successfully!'
+      redirect_to '/categories', notice: 'Category was created successfully!'
     else
       render :new
     end
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
     @category = Category.find_by_id(params[:id])
 
     if @category.update(category_params)
-      redirect_to '/', notice: 'Category has been successfully updated'
+      redirect_to '/categories', notice: 'Category has been successfully updated'
     else
       render :new
     end
@@ -41,7 +41,7 @@ class CategoriesController < ApplicationController
     @category = Category.find_by_id(params[:id])
 
     if @category.destroy
-      redirect_to '/', notice: 'Category has been successfully deleted'
+      redirect_to '/categories', notice: 'Category has been successfully deleted'
     else
       render :new
     end
@@ -54,6 +54,6 @@ class CategoriesController < ApplicationController
   end
 
   def set_category
-    @category = current_user.categories.find_by_id(params[:id])
+    @category = Category.find_by_id(params[:id])
   end
 end
