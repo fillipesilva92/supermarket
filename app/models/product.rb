@@ -5,4 +5,5 @@ class Product < ApplicationRecord
   validates :name, length: { minimum: 3 }
   validates :price, numericality: { greater_than: 0 }
   belongs_to :category
+  has_one :stock
 end
