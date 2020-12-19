@@ -3,6 +3,7 @@
 <% @stocks.each do |stock| %>
   <li><a href="/stocks/<%= stock.id %>"><%= stock.quantity %></a>
   <a href="/stocks/<%= stock.id %>"><%= stock.id %></a>
+  <a href="/stocks/<%= stock.id %>"><%= stock.product.name %></a>
   <a href="/stocks/<%= stock.id %>/edit">Edit</a>
   <a href="/stocks/<%= stock.id %>" data-confirm='Are you sure?' rel='nofollow' data-method="delete">Destroy</a></li>
 <% end %>

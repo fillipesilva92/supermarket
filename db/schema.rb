@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_223624) do
+ActiveRecord::Schema.define(version: 2020_12_19_153017) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_12_18_223624) do
   end
 
   create_table "stocks", force: :cascade do |t|
-    t.float "quantity"
+    t.integer "quantity"
     t.integer "product_id", null: false
     t.index ["product_id"], name: "index_stocks_on_product_id"
   end
