@@ -1,0 +1,10 @@
+<h1>Checkout</h1>
+
+<% @checkout.each do |checkout| %>
+  <li><a href="/checkouts/<%= checkout.id %>"><%= checkout.products %></a>
+  <a href="/checkouts/<%= checkout.id %>"><%= checkout.total %></a>
+  <a href="/checkouts/<%= checkout.id %>/edit">Edit</a>
+  <a href="/checkouts/<%= checkout.id %>" data-confirm='Are you sure?' rel='nofollow' data-method="delete">Destroy</a></li>
+<% end %>
+
+<a href='/checkouts/new'><h4>New Checkout</h4></a>
