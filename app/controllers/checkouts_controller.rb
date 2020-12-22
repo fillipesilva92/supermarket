@@ -44,7 +44,7 @@ class CheckoutsController < ApplicationController
   private
 
   def checkout_params
-    params.require(:checkout).permit(:user_id, :total, :products, :created_at, :payment_method, :change)
+    params.require(:checkout).permit(:user_id, :total, :products, :payment_method, :change)
   end
 
   def set_checkout
